@@ -48,7 +48,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{02F13FAE-C9D9-4C70-A691-582C3B49B15C}</ProjectGuid>
     <RootNamespace>foo_input_spotify</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
