@@ -2,6 +2,7 @@ version: 0.0.7.{build}
 configuration: Release
 build:
   project: foo_input_spotify.sln
+  image: Visual Studio 2017
   verbosity: minimal
 before_package:
 - cmd: >-
