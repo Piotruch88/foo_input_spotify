@@ -18,3 +18,7 @@ artifacts:
   name: foo_input_spotify
 - path: $(configuration)/foo_input_spotify-pdb.7z
   name: foo_input_spotify-pdb
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: VysVOZvHypxy8qVnc4bCGlGk+xCkrriiiSmZ77uVSUQw8G8cvtdxJUAwH258NaRm1nPyoa5z4tWeRwJahqLYnKns1qJq/VO8DP0Jq6P3iI4=
