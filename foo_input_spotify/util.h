@@ -1,6 +1,6 @@
 #pragma once
 
-#define MYVERSION "0.0.4"
+#define MYVERSION "0.0.7"
 
 #include "boost/noncopyable.hpp"
 #include <string>

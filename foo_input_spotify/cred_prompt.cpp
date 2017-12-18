@@ -31,7 +31,7 @@ std::auto_ptr<CredPromptResult> credPrompt(const char * msg) {
 	cui.pszMessageText = pszMessageText;
 	cui.pszCaptionText = L"Sign in to Spotify";
 	cui.hbmBanner = NULL;
-	fSave = FALSE;
+	fSave = TRUE;
 	SecureZeroMemory(pszName, sizeof(pszName));
 	SecureZeroMemory(pszPwd, sizeof(pszPwd));
 	const DWORD dwErr = CredUIPromptForCredentialsW(
@@ -44,15 +44,15 @@ std::auto_ptr<CredPromptResult> credPrompt(const char * msg) {
 		pszPwd,                       // Password
 		CREDUI_MAX_PASSWORD_LENGTH + 1, // Max number of char for password
 		&fSave,                       // State of save check box
-		CREDUI_FLAGS_GENERIC_CREDENTIALS |  // flags
-		CREDUI_FLAGS_ALWAYS_SHOW_UI |
-		CREDUI_FLAGS_DO_NOT_PERSIST);
+		CREDUI_FLAGS_PERSIST |
+		CREDUI_FLAGS_GENERIC_CREDENTIALS
+		);
 
 	if (dwErr == NO_ERROR)
 	{
 		pfc::stringcvt::convert_wide_to_utf8(cpr->un.data(), CRED_BUF_SIZE, pszName, sizeof(pszName));
 		pfc::stringcvt::convert_wide_to_utf8(cpr->pw.data(), CRED_BUF_SIZE, pszPwd, sizeof(pszPwd));
-		cpr->save = (fSave != FALSE);
+		cpr->save = (fSave != TRUE);
 
 		SecureZeroMemory(pszName, sizeof(pszName));
 		SecureZeroMemory(pszPwd, sizeof(pszPwd));
