@@ -9,3 +9,4 @@ ipch
 package
 *.db
 *.opendb
+.vs
